@@ -52,6 +52,15 @@ void save_b(book b);//lưu dữ liệu sách vào file
 
 node_b* search_b(tree_b b,char n[30]);//tìm kiếm sách theo tên
 
+
+
+
+
+void storeBSTNodes(tree_b root, vector<tree_b> &nodes);//lưu các node vào trong vector
+tree_b buildTreeUtil(vector<tree_b> &nodes, int start, int end);//xây dựng cây
+tree_b buildTree(tree_b root);//dựng cây nhị phân can bằng
+
+
 int compare(book a,book b){
     return strcmp(a.name,b.name);
 }
@@ -339,11 +348,49 @@ void Edit(tree_b& b){
     }
 }
 
-
 void incr_num_book(tree_b &b){
     b->c.Num+=1;
 }
 void decr_num_book(tree_b &b){
     b->c.Num-=1;
+}
+void storeBSTNodes(tree_b root, vector<tree_b> &nodes)
+{
+    // Base case
+    if (root==NULL)
+        return;
+ 
+    // Store nodes in Inorder (which is sorted
+    // order for BST)
+    storeBSTNodes(root->left, nodes);
+    nodes.push_back(root);
+    storeBSTNodes(root->right, nodes);
+}
+tree_b buildTreeUtil(vector<tree_b> &nodes, int start, int end)
+{
+    // base case
+    if (start > end)
+        return NULL;
+ 
+    /* Get the middle element and make it root */
+    int mid = (start + end)/2;
+    tree_b root = nodes[mid];
+ 
+    /* Using index in Inorder traversal, construct
+       left and right subtress */
+    root->left  = buildTreeUtil(nodes, start, mid-1);
+    root->right = buildTreeUtil(nodes, mid+1, end);
+ 
+    return root;
+}
+tree_b buildTree(tree_b root)
+{
+    // Store nodes of given BST in sorted order
+    vector<tree_b> nodes;
+    storeBSTNodes(root, nodes);
+ 
+    // Constructs BST from nodes[]
+    int n = nodes.size();
+    return buildTreeUtil(nodes, 0, n-1);
 }
 

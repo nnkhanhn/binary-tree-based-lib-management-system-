@@ -52,6 +52,7 @@ int main(){
                         cin>>id;
                         tree_r a = search_reader(r,id);
                         borrow_book(a,b);
+                        saveJSON(b);
 
                     }
                     else if(option2 == 2)

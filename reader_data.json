@@ -14,5 +14,13 @@
         "Ngay": 0,
         "Thang": 8,
         "Nam": 0
+    },
+    {
+        "ID": 3,
+        "Ten nguoi doc": "khanhddd",
+        "So sach muon": 0,
+        "Ngay": 0,
+        "Thang": 8,
+        "Nam": 0
     }
 ]

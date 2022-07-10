@@ -1,23 +1,23 @@
 [
     {
-        "Ten": "Aha Giau",
-        "Tac gia": "Long cao",
-        "Nha xuat ban": "Long thap",
-        "The loai": "Love you",
-        "So trang": 1,
-        "Nam xuat ban": 1,
-        "So sach con lai": 1,
-        "Vi tri": "AA"
-    },
-    {
         "Ten": "Baaaa",
         "Tac gia": "dsdsf",
         "Nha xuat ban": "dfdsfsd",
         "The loai": "ds�ds�f",
         "So trang": 1444,
         "Nam xuat ban": 2020,
-        "So sach con lai": 2,
+        "So sach con lai": 100,
         "Vi tri": "s1 2"
+    },
+    {
+        "Ten": "Aha Giau",
+        "Tac gia": "Long cao",
+        "Nha xuat ban": "Long thap",
+        "The loai": "Love you",
+        "So trang": 1,
+        "Nam xuat ban": 1,
+        "So sach con lai": 100,
+        "Vi tri": "AA"
     },
     {
         "Ten": "Caadddd",
@@ -26,7 +26,7 @@
         "The loai": "fdafff",
         "So trang": 1234,
         "Nam xuat ban": 2222,
-        "So sach con lai": 12,
+        "So sach con lai": 120,
         "Vi tri": "a 1"
     }
 ]

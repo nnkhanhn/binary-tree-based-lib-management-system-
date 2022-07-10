@@ -5,7 +5,7 @@ int main(){
     tree_b b = NULL;
     tree_r r = NULL;
     bool check = loadJSON(b);
-    tree_b b = buildTree(b); 
+    b = buildTree(b); 
     loadJSON_reader(r);
     showThuVien(b);
     while(option != 'Q')

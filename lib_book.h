@@ -86,8 +86,9 @@ void display_book(book b){
 }
 void display_tree(node_b *b){
     if(b!=NULL){
-        display_tree(b->left);
         display_book(b->c);
+        display_tree(b->left);
+        //display_book(b->c);
         display_tree(b->right);
     }
 }

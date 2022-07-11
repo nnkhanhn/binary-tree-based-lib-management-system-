@@ -35,6 +35,7 @@ int main(){
             }
             case'B':
             {   
+                cout<<"fff";
                 // int id;
                 // cout<<"nhap ID nguoi doc"<<endl;
                 // cin>>id;

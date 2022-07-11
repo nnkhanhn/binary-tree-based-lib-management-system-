@@ -47,6 +47,8 @@ int main(){
                     cin>>option2;
                     if(option2 == 1)
                     {   
+                        while(true)
+                        {
                         int id;
                         cout<<"nhap ID nguoi doc: ";
                         cin>>id;
@@ -54,6 +56,7 @@ int main(){
                         borrow_book(a,b);
                         saveJSON(b);
                         saveJSON_reader(r);
+                        }
 
                     }
                     else if(option2 == 2)

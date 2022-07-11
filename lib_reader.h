@@ -92,33 +92,32 @@ tree_r search_reader(tree_r a,int id ){
 }
 
 void borrow_book(tree_r &a, tree_b &b){
-    a->h.sachmuon=new char*[11];
-    char s[30];
-    cout<<"nhap ten sach muon "<<endl;
-    cin >>s ;
-    a->h.sosachmuon=0;
-    tree_b k=search_b(b,s);
-    if(k==NULL){
-        cout<<"sach khong ton tai trong thu vien"<<endl;
-        return;
+    char kk[30];
+    cinChar(kk);
+    while(true){
+        a->h.sachmuon=new char*[11];
+        char s[30];
+        cout<<"nhap ten sach muon "<<endl;
+        cinChar(s);
+        a->h.sosachmuon=0;
+        tree_b k=search_b(b,s);
+        if(k==NULL){
+        }
+        else if (a->h.sosachmuon>10)
+        {
+                cout<<"ban da muon qua so sach quy dinh"<<endl;
+                break;
+        }
+        else if(k->c.Num<=0)
+        {
+            cout<<"sach nay khong con trong kho"<<endl;
+        }else{
+            decr_num_book(k);
+            a->h.sachmuon[a->h.sosachmuon]=s;
+            a->h.sosachmuon++;
+            break;
+        }
     }
-    else if (a->h.sosachmuon>10)
-    {
-            cout<<"ban da muon qua so sach quy dinh"<<endl;
-            return;
-    }
-    else if(k->c.Num<=0)
-    {
-        cout<<"sach nay khong con trong kho"<<endl;
-        return;
-    }
-    else
-    {
-    decr_num_book(k);
-    a->h.sachmuon[a->h.sosachmuon]=s;
-    a->h.sosachmuon++;
-    }
-
 }
 
 void return_book(tree_r &a, tree_b &b){

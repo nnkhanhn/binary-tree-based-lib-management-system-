@@ -35,7 +35,7 @@ int main(){
             }
             case'B':
             {   
-                cout<<"fff";
+                
                 // int id;
                 // cout<<"nhap ID nguoi doc"<<endl;
                 // cin>>id;
@@ -50,14 +50,18 @@ int main(){
                     {   
                         while(true)
                         {
-                        int id;
-                        cout<<"nhap ID nguoi doc: ";
-                        cin>>id;
-                        tree_r a = search_reader(r,id);
-                        borrow_book(a,b);
-                        saveJSON(b);
-                        saveJSON_reader(r);
+                            int id;
+                            cout<<"nhap ID nguoi doc: ";
+                            cin>>id;
+                            tree_r a = search_reader(r,id);
+                            if(a){      
+                                borrow_book(a,b);
+                                saveJSON(b);
+                                saveJSON_reader(r);
+                                break;
+                            }else{}
                         }
+                
 
                     }
                     else if(option2 == 2)

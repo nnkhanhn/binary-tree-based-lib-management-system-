@@ -73,7 +73,7 @@ void add_r(tree_r &a){
 tree_r search_reader(tree_r a,int id ){
     if(a==NULL){
         cout<<"nguoi dung khong ton tai "<<endl;
-
+        return NULL;
     }
     else 
     {
@@ -99,7 +99,6 @@ void borrow_book(tree_r &a, tree_b &b){
         char s[30];
         cout<<"nhap ten sach muon "<<endl;
         cinChar(s);
-        a->h.sosachmuon=0;
         tree_b k=search_b(b,s);
         if(k==NULL){
         }
@@ -112,9 +111,13 @@ void borrow_book(tree_r &a, tree_b &b){
         {
             cout<<"sach nay khong con trong kho"<<endl;
         }else{
+            cout<<a->h.sosachmuon;
             decr_num_book(k);
             a->h.sachmuon[a->h.sosachmuon]=s;
+            cout<<a->h.sachmuon[a->h.sosachmuon];
             a->h.sosachmuon++;
+            cout<<a->h.sosachmuon;
+
             break;
         }
     }
@@ -135,6 +138,7 @@ void return_book(tree_r &a, tree_b &b){
 
 void vectorData_reader(tree_r a,vector<reader> &vtor){
     if(a!=NULL){
+        cout<<a->h.sachmuon[0];
         vtor.push_back(a->h);
         vectorData_reader(a->leftr,vtor);
         vectorData_reader(a->rightr,vtor);
@@ -157,11 +161,14 @@ void saveJSON_reader(tree_r a){
         writer.String(vector[i].namer);
         writer.Key("So sach muon");
         writer.Int(vector[i].sosachmuon);
+        writer.Key("Sach muon");
+        writer.StartArray();
         for(int k=0;k<vector[i].sosachmuon;k++)
-        {
-            writer.Key("Sach muon");
+        {   
+            cout<<k;
             writer.String(vector[i].sachmuon[k]);
         }
+        writer.EndArray();
         writer.EndObject();
     }
     writer.EndArray();

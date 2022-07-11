@@ -4,7 +4,7 @@ using namespace std;
 typedef struct reader{
     int ID;
     char namer[30];
-    char **sachmuon;
+    char sachmuon[30][30];
     int sosachmuon;
 
 } reader;
@@ -95,7 +95,6 @@ void borrow_book(tree_r &a, tree_b &b){
     char kk[30];
     cinChar(kk);
     while(true){
-        a->h.sachmuon=new char*[11];
         char s[30];
         cout<<"nhap ten sach muon "<<endl;
         cinChar(s);
@@ -111,13 +110,9 @@ void borrow_book(tree_r &a, tree_b &b){
         {
             cout<<"sach nay khong con trong kho"<<endl;
         }else{
-            cout<<a->h.sosachmuon;
             decr_num_book(k);
-            a->h.sachmuon[a->h.sosachmuon]=s;
-            cout<<a->h.sachmuon[a->h.sosachmuon];
+            strcpy(a->h.sachmuon[a->h.sosachmuon],s);
             a->h.sosachmuon++;
-            cout<<a->h.sosachmuon;
-
             break;
         }
     }
@@ -195,8 +190,8 @@ void loadJSON_reader(tree_r &b){
         a.sosachmuon = doc[i]["So sach muon"].GetInt();
         for(int k=0;k<a.sosachmuon;k++)
         {
-            // s=doc[i]["Sach muon"][k].GetString();
-            // strcpy(a.sachmuon[k],s.c_str());
+            s=doc[i]["Sach muon"][k].GetString();
+            strcpy(a.sachmuon[k],s.c_str());
         }
         insert_r(b,a);
     }

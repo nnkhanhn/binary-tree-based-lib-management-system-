@@ -21,6 +21,11 @@ void insert_r(tree_r &b,reader a);//thêm người dùng vào cây người dùn
 void borrow_book(tree_r &a, tree_b &b);//mượn sách
 
 void return_book(reader &a, tree_b &b);//trả sách
+
+void saveJSON_reader(tree_r a);//lưu dữ liệu vào file
+
+void loadJSON_reader(tree_r &b);//load dữ liệu từ file vào cây nhị phân
+
 ///////////////////////////////////////////////////////////////////////////////////////
 
 tree_r initr(reader a){

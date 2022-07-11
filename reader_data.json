@@ -2,25 +2,17 @@
     {
         "ID": 12,
         "Ten nguoi doc": "nkhanh",
-        "So sach muon": 0,
-        "Ngay": 0,
-        "Thang": 8,
-        "Nam": 0
+        "So sach muon": 1,
+        "Sach muon": ""
     },
     {
         "ID": 1,
         "Ten nguoi doc": "khanh",
-        "So sach muon": 0,
-        "Ngay": 0,
-        "Thang": 8,
-        "Nam": 0
+        "So sach muon": 0
     },
     {
         "ID": 3,
         "Ten nguoi doc": "khanhddd",
-        "So sach muon": 0,
-        "Ngay": 0,
-        "Thang": 8,
-        "Nam": 0
+        "So sach muon": 0
     }
 ]

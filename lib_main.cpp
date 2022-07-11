@@ -53,11 +53,19 @@ int main(){
                         tree_r a = search_reader(r,id);
                         borrow_book(a,b);
                         saveJSON(b);
+                        saveJSON_reader(r);
 
                     }
                     else if(option2 == 2)
                     {
-                        
+                        int id;
+                        cout<<"nhap id nguoi doc: ";
+                        cin>>id;
+                        tree_r a = search_reader(r,id);
+                        return_book(a,b);
+                        saveJSON(b);
+                        saveJSON_reader(r);
+
                     }
                     else if(option2 == 3)
                     {

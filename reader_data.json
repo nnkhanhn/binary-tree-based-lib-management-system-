@@ -2,27 +2,35 @@
     {
         "ID": 12,
         "Ten nguoi doc": "nkhanh",
-        "So sach muon": 2,
+        "So sach muon": 1,
         "Sach muon": [
-            "ggk",
             "Baaaa"
         ]
     },
     {
         "ID": 1,
         "Ten nguoi doc": "khanh",
-        "So sach muon": 2,
+        "So sach muon": 1,
         "Sach muon": [
-            "ggg",
-            "Aha Giau"
+            "Baaaa"
         ]
     },
     {
         "ID": 3,
         "Ten nguoi doc": "khanhddd",
-        "So sach muon": 1,
-        "Sach muon": [
-            "gggg"
-        ]
+        "So sach muon": 0,
+        "Sach muon": []
+    },
+    {
+        "ID": 2,
+        "Ten nguoi doc": "NGan",
+        "So sach muon": 0,
+        "Sach muon": []
+    },
+    {
+        "ID": 4,
+        "Ten nguoi doc": "Doanh",
+        "So sach muon": 0,
+        "Sach muon": []
     }
 ]

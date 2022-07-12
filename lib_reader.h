@@ -65,8 +65,7 @@ void add_r(tree_r &a){
     cinChar(k);
     cout<<"Ten nguoi doc: ";
     cinChar(r1.namer);
-    cout<<"So sach muon: ";
-    cin>>r1.sosachmuon;
+    r1.sosachmuon = 0;
     insert_r(a,r1);
 }
 
@@ -119,21 +118,45 @@ void borrow_book(tree_r &a, tree_b &b){
 }
 
 void return_book(tree_r &a, tree_b &b){
-    while(a->h.sosachmuon){
-        tree_b k = search_b(b,a->h.sachmuon[a->h.sosachmuon]);
-        incr_num_book(k);
-        delete[]a->h.sachmuon[a->h.sosachmuon];
-        a->h.sosachmuon--;
+    char kk[30];
+    cinChar(kk);
+    while(true){
+        int pos;
+        bool key = false;
+        char s[30];
+        cout<<"nhap ten sach tra "<<endl;
+        cinChar(s);
+        for(int i=0;i<a->h.sosachmuon;i++){
+            if(!strcmp(s,a->h.sachmuon[i])){
+                pos = i;
+                key = true;
+                break;
+            }
+        }
+        if(key){
+            tree_b k=search_b(b,s);
+            incr_num_book(k);
+            for(int i=pos;i<a->h.sosachmuon;i++){
+                strcpy(a->h.sachmuon[i],a->h.sachmuon[i+1]);
+            }
+            a->h.sosachmuon--;
+            break;
+        }else{
+            cout<<"Ban chua muon dau sach nay!"<<endl;
+        }
     }
-    delete []a->h.sachmuon;
-
-    cout<<"cam on da su dung dich vu"<<endl;
 }
+
+// void deleteBook(tree_r &a,int pos){
+//     for(int i=pos;i<a->h.sosachmuon;i++){
+//         strcpy(a->h.sachmuon[i],a->h.sachmuon[i+1]);
+//     }
+//     a->h.sosachmuon--;
+// }
 
 
 void vectorData_reader(tree_r a,vector<reader> &vtor){
     if(a!=NULL){
-        cout<<a->h.sachmuon[0];
         vtor.push_back(a->h);
         vectorData_reader(a->leftr,vtor);
         vectorData_reader(a->rightr,vtor);
@@ -160,7 +183,6 @@ void saveJSON_reader(tree_r a){
         writer.StartArray();
         for(int k=0;k<vector[i].sosachmuon;k++)
         {   
-            cout<<k;
             writer.String(vector[i].sachmuon[k]);
         }
         writer.EndArray();
@@ -173,6 +195,7 @@ void saveJSON_reader(tree_r a){
 
 
 void loadJSON_reader(tree_r &b){
+    cout<<"f2";
     std::ifstream ifs ("reader_data.json");
     if(!ifs)
     {
@@ -190,6 +213,7 @@ void loadJSON_reader(tree_r &b){
         a.sosachmuon = doc[i]["So sach muon"].GetInt();
         for(int k=0;k<a.sosachmuon;k++)
         {
+            cout<<k;
             s=doc[i]["Sach muon"][k].GetString();
             strcpy(a.sachmuon[k],s.c_str());
         }

@@ -5,7 +5,8 @@ int main(){
     tree_b b = NULL;
     tree_r r = NULL;
     bool check = loadJSON(b);
-    b = buildTree(b); 
+    cout<<"f"<<endl;
+    // b = buildTree(b); 
     loadJSON_reader(r);
     showThuVien(b);
     while(option != 'Q')
@@ -35,11 +36,6 @@ int main(){
             }
             case'B':
             {   
-                
-                // int id;
-                // cout<<"nhap ID nguoi doc"<<endl;
-                // cin>>id;
-                // tree_r r1=search_reader(r,id);
                 int option2;
                 while ((true))
                 {
@@ -66,13 +62,19 @@ int main(){
                     }
                     else if(option2 == 2)
                     {
-                        int id;
-                        cout<<"nhap id nguoi doc: ";
-                        cin>>id;
-                        tree_r a = search_reader(r,id);
-                        return_book(a,b);
-                        saveJSON(b);
-                        saveJSON_reader(r);
+                        while(true)
+                        {
+                            int id;
+                            cout<<"nhap ID nguoi doc: ";
+                            cin>>id;
+                            tree_r a = search_reader(r,id);
+                            if(a){      
+                                return_book(a,b);
+                                saveJSON(b);
+                                saveJSON_reader(r);
+                                break;
+                            }else{}
+                        }
 
                     }
                     else if(option2 == 3)
@@ -80,9 +82,11 @@ int main(){
                         add_r(r);
                         saveJSON_reader(r);
                     }
-                    else if(option2 = 0)
+                    else if(option2 == 0)
                     {
                         break;
+                    }else{
+                        cout<<"Khong hop le!!\nVui long nhap lai!!";
                     }
                 
                 }

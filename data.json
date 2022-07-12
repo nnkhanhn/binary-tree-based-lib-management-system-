@@ -1,13 +1,13 @@
 [
     {
-        "Ten": "Baaaa",
-        "Tac gia": "dsdsf",
-        "Nha xuat ban": "dfdsfsd",
-        "The loai": "ds�ds�f",
-        "So trang": 1444,
-        "Nam xuat ban": 2020,
-        "So sach con lai": 69,
-        "Vi tri": "s1 2"
+        "Ten": "Caadddd",
+        "Tac gia": "afda",
+        "Nha xuat ban": "fda",
+        "The loai": "fdafff",
+        "So trang": 1234,
+        "Nam xuat ban": 2222,
+        "So sach con lai": 120,
+        "Vi tri": "a 1"
     },
     {
         "Ten": "Aha Giau",
@@ -20,13 +20,83 @@
         "Vi tri": "AA"
     },
     {
-        "Ten": "Caadddd",
-        "Tac gia": "afda",
-        "Nha xuat ban": "fda",
-        "The loai": "fdafff",
-        "So trang": 1234,
-        "Nam xuat ban": 2222,
-        "So sach con lai": 120,
-        "Vi tri": "a 1"
+        "Ten": "Physic1",
+        "Tac gia": "Phan Anh",
+        "Nha xuat ban": "Kim Dong",
+        "The loai": "khoa hoc",
+        "So trang": 200,
+        "Nam xuat ban": 2001,
+        "So sach con lai": 17,
+        "Vi tri": "A2"
+    },
+    {
+        "Ten": "Ngu Van 2",
+        "Tac gia": "Hong Dang",
+        "Nha xuat ban": "Kim Dong",
+        "The loai": "van hoc",
+        "So trang": 130,
+        "Nam xuat ban": 2000,
+        "So sach con lai": 40,
+        "Vi tri": "B-2"
+    },
+    {
+        "Ten": "Math1",
+        "Tac gia": "Phan Long",
+        "Nha xuat ban": "Kim Dong",
+        "The loai": "khoa hoc",
+        "So trang": 230,
+        "Nam xuat ban": 2000,
+        "So sach con lai": 2,
+        "Vi tri": "A3"
+    },
+    {
+        "Ten": "Math2",
+        "Tac gia": "Phan Long",
+        "Nha xuat ban": "Kim Dong",
+        "The loai": "khoa hoc",
+        "So trang": 240,
+        "Nam xuat ban": 2000,
+        "So sach con lai": 3,
+        "Vi tri": "A3"
+    },
+    {
+        "Ten": "Math3",
+        "Tac gia": "Phan Long",
+        "Nha xuat ban": "Kim Dong",
+        "The loai": "khoa hoc",
+        "So trang": 233,
+        "Nam xuat ban": 2000,
+        "So sach con lai": 6,
+        "Vi tri": "A3"
+    },
+    {
+        "Ten": "Physic2",
+        "Tac gia": "Phan Anh",
+        "Nha xuat ban": "Kim Dong",
+        "The loai": "khoa hoc",
+        "So trang": 201,
+        "Nam xuat ban": 2000,
+        "So sach con lai": 28,
+        "Vi tri": "A3"
+    },
+    {
+        "Ten": "Physic3",
+        "Tac gia": "Phan Anh",
+        "Nha xuat ban": "Kim Dong",
+        "The loai": "khoa hoc",
+        "So trang": 231,
+        "Nam xuat ban": 2000,
+        "So sach con lai": 28,
+        "Vi tri": "A3"
+    },
+    {
+        "Ten": "Physic4",
+        "Tac gia": "Phan Anh",
+        "Nha xuat ban": "Kim Dong",
+        "The loai": "khoa hoc",
+        "So trang": 290,
+        "Nam xuat ban": 2000,
+        "So sach con lai": 28,
+        "Vi tri": "A3"
     }
 ]

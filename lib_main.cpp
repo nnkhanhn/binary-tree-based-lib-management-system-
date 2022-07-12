@@ -40,7 +40,7 @@ int main(){
                 while ((true))
                 {
                     cout<<"\n\n-------------------------------------------------------------------------------------------------------------------------------------------------\n";
-                    cout<<"Choose your option:\n1.Borrow book\n2.Return book\n3.Them nguoi doc\nYour option: ";
+                    cout<<"Choose your option:\n1.Borrow book\n2.Return book\n3.Them nguoi doc\n0.Quit\nYour option: ";
                     cin>>option2;
                     if(option2 == 1)
                     {   
@@ -90,8 +90,6 @@ int main(){
                     }
                 
                 }
-                
-               
             }
         }
     }

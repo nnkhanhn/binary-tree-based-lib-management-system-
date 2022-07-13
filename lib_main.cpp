@@ -1,4 +1,5 @@
 #include"lib_reader.h"
+
 int main(){
     cout<<"_____________HE THONG QUAN LY THU VIEN________________"<<endl;
     char option;
@@ -6,13 +7,13 @@ int main(){
     tree_r r = NULL;
     bool check = loadJSON(b);
     cout<<"f"<<endl;
-    // b = buildTree(b); 
+    b = buildTree(b); 
     loadJSON_reader(r);
     showThuVien(b);
     while(option != 'Q')
     {
         cout<<"\n\n-------------------------------------------------------------------------------------------------------------------------------------------------------\n";
-        cout<<"Enter an operation:\nA.Manager\nB.Reader\nQ.Quit\nYour operation: ";
+        cout<<"Choose your option:\nA.Book\nB.Reader\nQ.Out\nYour option: ";
         cin>>option;
         switch(option){
             case 'A':{
@@ -30,9 +31,10 @@ int main(){
                     }else if (option1 == 0){
                         break;
                     }else{
-                        cout<<"Khong hop le!!\nVui long nhap lai!!";
+                        cout<<"Wrong!!!!";
                     }    
                 }
+                break;
             }
             case'B':
             {   
@@ -40,56 +42,21 @@ int main(){
                 while ((true))
                 {
                     cout<<"\n\n-------------------------------------------------------------------------------------------------------------------------------------------------\n";
-                    cout<<"Choose your option:\n1.Borrow book\n2.Return book\n3.Them nguoi doc\n0.Quit\nYour option: ";
+                    cout<<"Choose your option:\n1.Search Reader\n2.Add Reader\n0.Quit\nYour option: ";
                     cin>>option2;
-                    if(option2 == 1)
-                    {   
-                        while(true)
-                        {
-                            int id;
-                            cout<<"nhap ID nguoi doc: ";
-                            cin>>id;
-                            tree_r a = search_reader(r,id);
-                            if(a){      
-                                borrow_book(a,b);
-                                saveJSON(b);
-                                saveJSON_reader(r);
-                                break;
-                            }else{}
-                        }
-                
-
-                    }
-                    else if(option2 == 2)
-                    {
-                        while(true)
-                        {
-                            int id;
-                            cout<<"nhap ID nguoi doc: ";
-                            cin>>id;
-                            tree_r a = search_reader(r,id);
-                            if(a){      
-                                return_book(a,b);
-                                saveJSON(b);
-                                saveJSON_reader(r);
-                                break;
-                            }else{}
-                        }
-
-                    }
-                    else if(option2 == 3)
-                    {
+                    if(option2 == 1){   
+                        editReader(b,r);
+                    }else if(option2 == 2){
                         add_r(r);
                         saveJSON_reader(r);
-                    }
-                    else if(option2 == 0)
-                    {
-                        break;
+                    }else if(option2 == 0){
+                        break;      
                     }else{
-                        cout<<"Khong hop le!!\nVui long nhap lai!!";
+                        cout<<"Wrong!!!";
                     }
                 
                 }
+                break;
             }
         }
     }

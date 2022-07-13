@@ -71,7 +71,7 @@ void add_r(tree_r &a){
 
 tree_r search_reader(tree_r a,int id ){
     if(a==NULL){
-        cout<<"nguoi dung khong ton tai "<<endl;
+        cout<<"Id does not exit!!!"<<endl;
         return NULL;
     }
     else 
@@ -95,19 +95,21 @@ void borrow_book(tree_r &a, tree_b &b){
     cinChar(kk);
     while(true){
         char s[30];
-        cout<<"nhap ten sach muon "<<endl;
+        cout<<"You want brrow: ";
         cinChar(s);
         tree_b k=search_b(b,s);
         if(k==NULL){
+            break;
         }
         else if (a->h.sosachmuon>10)
         {
-                cout<<"ban da muon qua so sach quy dinh"<<endl;
+                cout<<"Can't brrow more than 10 books"<<endl;
                 break;
         }
         else if(k->c.Num<=0)
         {
-            cout<<"sach nay khong con trong kho"<<endl;
+            cout<<s<<" is over!!"<<endl;
+            break;
         }else{
             decr_num_book(k);
             strcpy(a->h.sachmuon[a->h.sosachmuon],s);
@@ -124,7 +126,7 @@ void return_book(tree_r &a, tree_b &b){
         int pos;
         bool key = false;
         char s[30];
-        cout<<"nhap ten sach tra "<<endl;
+        cout<<"You want return: ";
         cinChar(s);
         for(int i=0;i<a->h.sosachmuon;i++){
             if(!strcmp(s,a->h.sachmuon[i])){
@@ -142,17 +144,11 @@ void return_book(tree_r &a, tree_b &b){
             a->h.sosachmuon--;
             break;
         }else{
-            cout<<"Ban chua muon dau sach nay!"<<endl;
+            cout<<"You has't borrower this book!"<<endl;
+            break;
         }
     }
 }
-
-// void deleteBook(tree_r &a,int pos){
-//     for(int i=pos;i<a->h.sosachmuon;i++){
-//         strcpy(a->h.sachmuon[i],a->h.sachmuon[i+1]);
-//     }
-//     a->h.sosachmuon--;
-// }
 
 
 void vectorData_reader(tree_r a,vector<reader> &vtor){
@@ -195,7 +191,6 @@ void saveJSON_reader(tree_r a){
 
 
 void loadJSON_reader(tree_r &b){
-    cout<<"f2";
     std::ifstream ifs ("reader_data.json");
     if(!ifs)
     {
@@ -213,11 +208,45 @@ void loadJSON_reader(tree_r &b){
         a.sosachmuon = doc[i]["So sach muon"].GetInt();
         for(int k=0;k<a.sosachmuon;k++)
         {
-            cout<<k;
             s=doc[i]["Sach muon"][k].GetString();
             strcpy(a.sachmuon[k],s.c_str());
         }
         insert_r(b,a);
     }
 
+}
+
+
+void editReader(tree_b b,tree_r r){
+    while(true){
+        int id;
+        cout<<"Reader'id: ";
+        cin>>id;
+        tree_r a = search_reader(r,id);
+        int choice;
+        if(a){
+            while(true){
+                cout<<"-------------------------------------------------------------------------------------------------------------------------------------------------------\n";
+                cout<<"Your list book: ";
+                for(int i=0;i<a->h.sosachmuon;i++){
+                    cout<<a->h.sachmuon[i]<<", ";
+                }
+                cout<<"\nYou want?\n1.Borrow book\n2.Return book\n0.Quit\nYour choice: ";
+                cin>>choice;
+                if(choice == 1){
+                    borrow_book(a,b);
+                    saveJSON(b);
+                    saveJSON_reader(r);
+                }else if(choice == 2){
+                    return_book(a,b);
+                    saveJSON(b);
+                    saveJSON_reader(r);
+                }else if(choice == 0){
+                    break;
+                }
+            }
+            break;    
+        }else{
+        }
+    }
 }
